@@ -50,6 +50,7 @@
     "webpack-dev-server": "^1.16.2"
   },
   "dependencies": {
+    "ajv": "^4.11.5",
     "autoprefixer": "^6.5.3",
     "axios": "^0.15.2",
     "body-parser": "^1.15.2",
