@@ -7,6 +7,7 @@ import injectTapEventPlugin from 'react-tap-event-plugin';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import getMuiTheme from 'material-ui/styles/getMuiTheme';
 import { history } from './components/shared/VaultUtils.jsx';
+import URLNavigationDialog from './components/Helpers/URLNavigation.jsx';
 import App from './components/App/App.jsx';
 import SecretsGeneric from './components/Secrets/Generic/Generic.jsx';
 import PolicyManager from './components/Policies/Manage.jsx';
@@ -69,6 +70,13 @@ const checkAccessToken = (nextState, replace, callback) => {
 const muiTheme = getMuiTheme({
     fontFamily: 'Source Sans Pro, sans-serif',
 });
+
+
+ReactDOM.render((
+    <MuiThemeProvider muiTheme={muiTheme}>
+        <URLNavigationDialog />
+    </MuiThemeProvider>
+), document.getElementById('apphelpers'))
 
 ReactDOM.render((
     <MuiThemeProvider muiTheme={muiTheme}>

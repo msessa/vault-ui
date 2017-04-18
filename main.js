@@ -1,4 +1,4 @@
-const { app, protocol, BrowserWindow, Menu, dialog } = require('electron')
+const { app, protocol, BrowserWindow, Menu, dialog, ipcMain } = require('electron')
 
 const path = require('path')
 const url = require('url')
@@ -52,6 +52,10 @@ app.on('open-url', function (event, openurl) {
   setInitialPath(openurl);
 })
 
+ipcMain.on('shortcut-navigate', (event, arg) => {
+  setInitialPath(arg);
+})
+
 function createWindow() {
   // Create the browser window.
   mainWindow = new BrowserWindow({ width: 1024, height: 768 })
@@ -97,6 +101,7 @@ function createWindow() {
   }, {
     label: "Tools",
     submenu: [
+      { label: "Navigate to URL", accelerator: "CmdOrCtrl+P", click: function () { mainWindow.webContents.send('open-url-navigation-dialog', 'trigger') } },
       { label: "Open Development Tools", click: function () { mainWindow.webContents.openDevTools(); } }
     ]
   }
