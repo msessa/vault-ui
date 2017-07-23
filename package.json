@@ -67,7 +67,7 @@
     "immutability-helper": "^2.1.2",
     "jsondiffpatch": "^0.2.4",
     "jsondiffpatch-for-react": "^1.0.1",
-    "jsoneditor": "^5.5.11",
+    "jsoneditor": "^5.9.2",
     "lodash": "^4.16.6",
     "material-ui": "^0.16.7",
     "mui-icons": "^1.2.1",

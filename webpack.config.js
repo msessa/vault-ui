@@ -59,7 +59,6 @@ module.exports = function (env) {
         },
         plugins: [
             new ExtractTextPlugin("styles.css"),
-            new webpack.IgnorePlugin(/regenerator|nodent|js-beautify/, /ajv/),
             new webpack.DefinePlugin({ WEBPACK_DEF_TARGET_WEB: (buildfor == "web") })
         ]
     }
